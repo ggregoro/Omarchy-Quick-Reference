@@ -19,23 +19,43 @@ disk:
 
 ## How it works
 
-1. Press the key you bind it to.
-2. Your documents appear as cards in a carousel, like Omarchy's background
-   switcher. Each card shows the title and the first part of the document,
-   in your theme's colours.
-3. Scroll with the arrow keys, or type to filter by title.
-4. Press `Enter` to open the full document, read-only. `Esc` closes it.
+1. Put the documents you want at hand in one folder:
+   `~/Documents/Quick Reference` (created on first run; you can point it at
+   another folder in the settings).
+2. Press the key you bind it to.
+3. Your documents appear as cards in a carousel, like Omarchy's background
+   switcher, in your theme's colours.
+4. Scroll with the arrow keys, or type to filter by title.
+5. Press `Enter` to open the one you need. `Esc` closes it.
 
-## Planned for the first version
+When you no longer need a document, move it out of the folder. That's all
+the managing there is.
 
-- Markdown (`.md`) and plain text (`.txt`) documents
-- You choose which documents (or which folder) it shows
-- Cards drawn in the current theme's colours and font, redrawn when you
-  change theme
+## Supported files (planned for the first version)
+
+| File | Card shows | Opens in |
+|---|---|---|
+| Markdown (`.md`), text (`.txt`) | Title and the start of the text | A read-only view in the panel |
+| Images (`.png`, `.jpg`, `.webp`) | The image | Omarchy's image viewer |
+| PDF (`.pdf`) | The first page | Omarchy's PDF viewer |
+
+Previews for PDFs use `pdftoppm`; both it and the PDF viewer come with
+Omarchy, so there is nothing extra to install.
+
+**Word and LibreOffice documents** (`.docx`, `.odt` and so on) are not
+supported: previewing them would need a full office suite running in the
+background. Save them as PDF instead; every office app can, and the PDF
+looks the same. Files the plugin can't show are skipped, so nothing breaks
+if one ends up in the folder.
+
+## Also planned
+
+- Cards in the current theme's colours and font, redrawn when you change
+  theme
 - Filter by title
 - One key binding to open it
 
-Maybe later: PDFs and images, searching inside documents.
+Maybe later: searching inside documents.
 
 ## Examples
 
