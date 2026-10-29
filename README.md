@@ -35,6 +35,9 @@ It is meant for a short list you pick yourself, the documents you keep
 coming back to, not everything on your disk:
 
 - cheat sheets and keyboard shortcuts
+- programming notes: the Git commands you always forget, date-format codes,
+  a regex cheat sheet, your project's own commands (short
+  [tldr](https://tldr.sh) pages work too; they are plain Markdown)
 - recipes
 - specs for the hardware you work with
 - runbooks, procedures and checklists
@@ -143,9 +146,18 @@ The [`examples`](examples) folder has three sample documents to try it with:
 a recipe, a hardware spec sheet and a set of keyboard shortcuts. Copy them
 into your folder to see how cards look.
 
-## Maybe later
+## Ideas for later
 
-- Searching inside documents
+Not built yet. If one of these is useful to you, issues, pull requests and
+forks are welcome.
+
+- **Search inside documents**, not just by title.
+- **Copy a line to the clipboard** from the reader, so a command can be
+  grabbed and pasted without touching the mouse.
+- **Documents that keep themselves up to date.** The plugin shows whatever
+  is in the folder, so a small script on a timer could keep a file current:
+  market prices, the weather, a server's status. Showing changes while a
+  card is open would need a small change to the plugin.
 
 ## Credits
 
