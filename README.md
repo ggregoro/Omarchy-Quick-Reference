@@ -1,14 +1,38 @@
 # Omarchy Quick Reference
 
-A quick viewer for the handful of documents you keep coming back to, for
-[Omarchy](https://omarchy.org). Press a key, scroll through your documents
-as large cards, and press `Enter` to read the one you need. No file manager,
-no searching through folders.
+Your cheat sheets, one key away, on top of whatever you're doing. For
+[Omarchy](https://omarchy.org).
 
 ![Quick Reference in action](screenshots/demo.webp)
 
-It is meant for a short list you pick yourself, not for everything on your
-disk:
+You're in the middle of something: writing a document, editing code, filling
+in a form. You need one small fact. The key that splits a window, the
+command you always forget, the setting on that printer. Normally that means
+leaving your work: switching to a file manager, finding the folder, opening
+the file, scrolling to the right spot, then finding your way back again.
+
+With Quick Reference you press one key. Your documents appear as large cards
+over your screen. Glance at the card, or press `Enter` to read the whole
+document. Then press `Esc`, and you're back exactly where you were, with
+your cursor still in place. A few seconds, and you never left your work.
+
+## Why it helps
+
+- **It stays out of the way.** It opens over your current window and closes
+  with `Esc`. No new windows to tidy up, no workspace switching.
+- **The answer is often on the card.** Each card shows the start of the
+  document, so a quick look is frequently enough.
+- **No hunting.** Your documents are always in one place, behind one key,
+  instead of somewhere in a folder tree or a pile of browser tabs.
+- **Typing finds things.** Start typing a name and the cards narrow down to
+  the one you want.
+- **It fits in.** It looks and works like Omarchy's own pickers and follows
+  your theme's colours.
+
+## What to put in it
+
+It is meant for a short list you pick yourself, the documents you keep
+coming back to, not everything on your disk:
 
 - cheat sheets and keyboard shortcuts
 - recipes
