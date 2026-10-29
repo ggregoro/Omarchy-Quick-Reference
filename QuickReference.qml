@@ -36,6 +36,7 @@ Item {
   property bool viewing: false
   property string filterText: ""
   property string viewerText: ""
+  property string viewerKind: "text"
 
   // The carousel uses the image picker's colours; the cards use the menu's.
   property color dimColor: Commons.Color.background
@@ -140,6 +141,8 @@ Item {
     if (!doc) return
 
     if (Model.isText(doc.kind)) {
+      viewerText = ""
+      viewerKind = doc.kind
       viewerFile.path = doc.filePath
       viewerFile.reload()
       viewing = true
@@ -179,6 +182,7 @@ Item {
 
   function close() {
     viewing = false
+    viewerText = ""
     filterText = ""
     opened = false
   }
@@ -428,7 +432,7 @@ Item {
                   clip: true
                   // Plain text only: rich text on the cards crashed the shell.
                   textFormat: Text.PlainText
-                  text: Model.plainPreview(item.content, item.kind, 40)
+                  text: Model.plainText(item.content, item.kind, 40)
                   wrapMode: Text.Wrap
                   color: root.cardText
                   font.pixelSize: Style.font.body
@@ -569,13 +573,13 @@ Item {
         Text {
           id: viewerBody
           width: viewerFlick.width
-          textFormat: root.currentDoc && root.currentDoc.kind === "markdown" ? Text.MarkdownText : Text.PlainText
-          text: root.currentDoc && root.currentDoc.kind === "markdown" ? root.viewerText.replace(/^\s*#[^\n]*\n/, "") : root.viewerText
+          // Plain text only, like the cards: rich text crashed the shell.
+          textFormat: Text.PlainText
+          text: Model.plainText(root.viewerText, root.viewerKind, 0)
           wrapMode: Text.Wrap
           color: root.cardText
           font.pixelSize: Style.font.title
           font.family: Style.font.family
-          onLinkActivated: function(link) { Quickshell.execDetached(["uwsm-app", "--", "xdg-open", link]) }
         }
       }
     }

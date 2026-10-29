@@ -63,7 +63,7 @@ Reading a text or Markdown document:
 
 | File | Card shows | Opens in |
 |---|---|---|
-| Markdown (`.md`), text (`.txt`) | Title and the start of the text | A read-only view in the panel |
+| Markdown (`.md`), text (`.txt`) | Title and the start of the text | A read-only plain-text view in the panel (Markdown symbols are left out) |
 | Images (`.png`, `.jpg`, `.webp`, `.gif`) | The image | Your default image viewer |
 | PDF (`.pdf`) | The first page | Your default PDF viewer |
 

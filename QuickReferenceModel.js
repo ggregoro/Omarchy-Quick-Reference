@@ -14,14 +14,15 @@ function isText(kind) {
   return kind === "markdown" || kind === "text"
 }
 
-// Card preview as plain text: Markdown markup is stripped so the cards
-// never render rich text (drawing several large Markdown documents at once
-// crashed the shell). Tables become "cell · cell" lines.
-function plainPreview(content, kind, maxLines) {
+// Markdown as plain text: the markup is stripped so the plugin never
+// renders rich text (Qt's rich text drawing crashed the shell with large
+// table-heavy documents). Tables become "cell · cell" lines. maxLines 0
+// means the whole document.
+function plainText(content, kind, maxLines) {
   var lines = String(content || "").split("\n")
   var out = []
   var skippedTitle = false
-  var limit = maxLines || 40
+  var limit = maxLines > 0 ? maxLines : Infinity
 
   for (var i = 0; i < lines.length && out.length < limit; i++) {
     var line = lines[i]
