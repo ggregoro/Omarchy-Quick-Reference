@@ -5,6 +5,8 @@ A quick viewer for the handful of documents you keep coming back to, for
 as large cards, and press `Enter` to read the one you need. No file manager,
 no searching through folders.
 
+![Quick Reference in action](screenshots/demo.webp)
+
 It is meant for a short list you pick yourself, not for everything on your
 disk:
 
@@ -29,6 +31,10 @@ disk:
 
 When you no longer need a document, move it out of the folder. That's all
 the managing there is.
+
+![The cards](screenshots/cards.webp)
+
+![Reading a document](screenshots/document.webp)
 
 ## Keys
 
