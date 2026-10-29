@@ -426,10 +426,9 @@ Item {
                   width: root.expandedWidth - root.textInset * 2
                   height: parent.height - y - Style.space(16)
                   clip: true
-                  textFormat: item.kind === "markdown" ? Text.MarkdownText : Text.PlainText
-                  // The card already shows the title, so drop a leading
-                  // Markdown heading.
-                  text: item.kind === "markdown" ? item.content.replace(/^\s*#[^\n]*\n/, "") : item.content
+                  // Plain text only: rich text on the cards crashed the shell.
+                  textFormat: Text.PlainText
+                  text: Model.plainPreview(item.content, item.kind, 40)
                   wrapMode: Text.Wrap
                   color: root.cardText
                   font.pixelSize: Style.font.body

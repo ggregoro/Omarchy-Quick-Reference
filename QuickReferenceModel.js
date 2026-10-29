@@ -14,6 +14,39 @@ function isText(kind) {
   return kind === "markdown" || kind === "text"
 }
 
+// Card preview as plain text: Markdown markup is stripped so the cards
+// never render rich text (drawing several large Markdown documents at once
+// crashed the shell). Tables become "cell · cell" lines.
+function plainPreview(content, kind, maxLines) {
+  var lines = String(content || "").split("\n")
+  var out = []
+  var skippedTitle = false
+  var limit = maxLines || 40
+
+  for (var i = 0; i < lines.length && out.length < limit; i++) {
+    var line = lines[i]
+
+    if (kind === "markdown") {
+      if (/^\s*```/.test(line)) continue
+      if (/^\s*\|?[\s:|-]+\|[\s:|-]*$/.test(line) && line.indexOf("-") >= 0) continue
+      if (/^\s*#/.test(line)) {
+        if (!skippedTitle && out.length === 0) { skippedTitle = true; continue }
+        line = line.replace(/^\s*#+\s*/, "")
+      }
+      if (/^\s*\|/.test(line)) {
+        line = line.replace(/^\s*\|/, "").replace(/\|\s*$/, "")
+          .split("|").map(function(cell) { return cell.trim() }).join("  ·  ")
+      }
+      line = line.replace(/\*\*|__|`/g, "").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    }
+
+    if (line.trim() === "" && (out.length === 0 || out[out.length - 1] === "")) continue
+    out.push(line)
+  }
+
+  return out.join("\n")
+}
+
 function loadRows(rows) {
   var docs = []
   var lines = String(rows || "").split("\n")
