@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "ggregoro.quick-reference",
+  "name": "Quick Reference",
+  "version": "0.1.0",
+  "author": "Greg Gregorowicz",
+  "license": "GPL-3.0-only",
+  "description": "Quick viewer for the handful of documents you keep coming back to: cheat sheets, recipes, specs",
+  "kinds": [
+    "overlay"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "QuickReference.qml"
+  }
+}
