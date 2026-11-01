@@ -140,6 +140,21 @@ To use another folder, add a `folder` field to the plugin's entry in the
 Tip: links work. To keep a document where it is and still show it here,
 link it into the folder (`ln -s ~/notes/tmux.md ~/Documents/"Quick Reference"/`).
 
+## Remove
+
+```bash
+omarchy plugin remove ggregoro.quick-reference
+```
+
+Then delete the key line from `~/.config/hypr/bindings.lua` and the `folder`
+field, if you added one. Your documents are not touched: they stay in
+`~/Documents/Quick Reference` (or your own folder). To clear the PDF previews
+too:
+
+```bash
+rm -rf ~/.cache/quick-reference
+```
+
 ## Examples
 
 The [`examples`](examples) folder has three sample documents to try it with:

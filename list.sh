@@ -9,7 +9,12 @@ folder="$1"
 cache="${XDG_CACHE_HOME:-$HOME/.cache}/quick-reference"
 
 [[ -n $folder ]] || exit 0
-mkdir -p "$folder" "$cache" 2>/dev/null
+mkdir -p "$folder" 2>/dev/null
+
+# PDF previews show a page of the user's document, so keep them private.
+umask 077
+mkdir -p "$cache" 2>/dev/null
+chmod 700 "$cache" 2>/dev/null
 
 find -L "$folder" -maxdepth 1 -type f ! -name '.*' -print0 2>/dev/null | sort -z |
   while IFS= read -r -d '' file; do
